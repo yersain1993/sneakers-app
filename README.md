@@ -1,11 +1,32 @@
 # **NodeJS Challenge**
 
-The application has two public route as we'll see below.
+The API has two public route as we'll see below.
 
 ## 1st public route:
 
-In this route we can see all seneakers in stock, was implemented :
+In this route we can see all sneakers in stock, was implemented:
 
+```
+const Product = require('../models/Product');
+const catchError = require('../utils/catchError');
+
+const getAll = catchError(async(req, res) => {
+    const product = await Product.find();
+    const stock = product.filter(item => item.get('existencia') > 0);
+    return res.json(stock);
+});
+
+module.exports = {
+    getAll,
+}
+```
+
+Int this route the usaer can see all product in stock using a filter like as
+`const stock = product.filter(item => item.get('existencia') > 0)`
+
+All this you can find in the ***product.controller.js***.
+
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/909fc5ab-ccd1-460f-8a98-388359259765)
 
 
 ## 2do public route:
@@ -58,6 +79,9 @@ and the API return `precio_especial_personal` throught the last line
 `return res.json({price: price.precio_especial_personal})`, but if this is not the case
 the line `if(!price) return res.json({price: product.get('precio_base')})` return the 
 ***base price***.
+
+All this you can find in ***user.controller.js***.
+
 
 
 

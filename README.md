@@ -73,6 +73,7 @@ module.exports = {
     getOne,
 }
 ```
+
 Where we get the the parameters from the the dynamic route wuth
 `const { userId, productName } = req.params` de-structuring, then 
 we define a const `const user = await User.findOne({id: +userId})` 

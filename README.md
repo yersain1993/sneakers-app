@@ -1,10 +1,18 @@
 # **NodeJS Challenge**
 
-The API has two public route as we'll see below.
+## REST Achitecture
+
+I have implented this architecture for it's easy and simplicity becouse since following HTTP standard methods and send a JSON response. The escability is very important becouse  
+allow manage many users simultaneous and adapt quickly to increased demand; allows store in cache the response, improving perfomance and reducing the charge in the server and uniform interface.
+
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/184e6cd6-eae4-4286-b519-b898b6c81c64)
+
+
+The API REST has two public routes as we'll see below.
 
 ## 1st public route:
 
-In this route we can see all sneakers in stock, was implemented:
+In this route we can see all sneakers in stock, was implemented thus:
 
 ```
 const Product = require('../models/Product');
@@ -27,6 +35,11 @@ Int this route the usaer can see all product in stock using a filter like as
 All this you can find in the ***product.controller.js***.
 
 ![image](https://github.com/yersain1993/sneakers-app/assets/103155109/909fc5ab-ccd1-460f-8a98-388359259765)
+
+> [!IMPORTANT]
+> The routes API's route can be seen in the image below.
+
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/f9f2d930-cf38-4943-a925-7091e3e78a1e)
 
 
 ## 2do public route:
@@ -82,6 +95,16 @@ the line `if(!price) return res.json({price: product.get('precio_base')})` retur
 
 All this you can find in ***user.controller.js***.
 
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/6ddbf0b6-9969-46e9-a303-0aa2d76441a1)
+
+> [!IMPORTANT]
+> The routes API's route can be seen in the image below.
+
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/2215ce88-6431-47f9-9305-6156ac5c2b9e)
 
 
+> [!NOTE]
+> The index file store both routes how as follows.
+
+![image](https://github.com/yersain1993/sneakers-app/assets/103155109/7792cee6-46c1-4171-a28d-134b90ad2269)
 
